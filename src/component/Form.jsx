@@ -57,7 +57,7 @@ const Form = () => {
 
         try {
             // Step 1: Fetch existing form entry from the server
-            const response = await fetch(`http://localhost:5000/responses/${id}`);
+            const response = await fetch(`https://json-server-db-o00h.onrender.com/responses/${id}`);
 
             let existingForm;
             if (response.ok) {
@@ -76,7 +76,7 @@ const Form = () => {
                 };
 
                 // Step 3: Update the existing form entry in the JSON server
-                await fetch(`http://localhost:5000/responses/${id}`, {
+                await fetch(`https://json-server-db-o00h.onrender.com/responses/${id}`, {
                     method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(updatedFormData)
@@ -90,7 +90,7 @@ const Form = () => {
                     responses: [newResponse]
                 };
 
-                await fetch("http://localhost:5000/responses", {
+                await fetch("https://json-server-db-o00h.onrender.com/responses", {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(updatedFormData)
