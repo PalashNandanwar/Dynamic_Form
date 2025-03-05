@@ -21,7 +21,7 @@ const Response = () => {
 
         const fetchDataById = async () => {
             try {
-                const response = await fetch(`http://localhost:5000/responses`);
+                const response = await fetch(`https://json-server-db-o00h.onrender.com/responses`);
                 if (!response.ok) {
                     throw new Error(`Error ${response.status}: Unable to fetch data.`);
                 }
